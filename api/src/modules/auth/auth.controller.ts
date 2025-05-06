@@ -6,6 +6,8 @@ import { AuthService } from './auth.service';
 import { Response } from 'express';
 import { LocalGuard } from '../../common/guards/auth/local.guard';
 import { ApiEndpoint } from 'src/common/decorators/api-endpoint.decorator';
+import { RegisterDTO } from '@mtsd-lab3/utils';
+import { AuthDocumentation } from '../../common/documentation/modules/auth';
 
 @Controller('auth')
 export class AuthController {
@@ -14,9 +16,10 @@ export class AuthController {
   @Post('/register')
   @ApiEndpoint({
     summary: 'Register a user',
+    documentation: AuthDocumentation.REGISTER,
   })
   async register (
-    @Body() data: any,
+    @Body() data: RegisterDTO,
   ) {
     return this.authService.register(data);
   }
@@ -25,6 +28,7 @@ export class AuthController {
   @ApiEndpoint({
     summary: 'Login',
     guards: LocalGuard,
+    documentation: AuthDocumentation.LOGIN,
   })
   @Post('/login')
   login (
@@ -40,6 +44,7 @@ export class AuthController {
   @Post('/logout')
   @ApiEndpoint({
     summary: 'Logout',
+    documentation: AuthDocumentation.LOGOUT,
   })
   logout (
     @Res({ passthrough: true }) response: Response,

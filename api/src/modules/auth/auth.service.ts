@@ -6,6 +6,7 @@ import { AlreadyRegisteredException } from '../../common/exceptions/already-regi
 import { UserEntity } from '../../database/entities/user.entity';
 import { JwtPayload } from './types/jwt.payload';
 import * as process from 'node:process';
+import { RegisterDTO } from '@mtsd-lab3/utils';
 
 @Injectable()
 export class AuthService {
@@ -14,7 +15,7 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async register (data: any) {
+  async register (data: RegisterDTO) {
     if (await this.checkIfUserIsRegistered(data)) {
       throw new AlreadyRegisteredException();
     }
