@@ -27,8 +27,8 @@ export class AuthService {
   login (user: UserEntity) {
     const payload = this.createPayload(user);
     const accessToken = this.jwtService.sign(payload, {
-      expiresIn: process.env['accessTtl'] ?? '7d',
-      secret: process.env['accessSecret'],
+      expiresIn: process.env['ACCESS_TTL'] ?? '7d',
+      secret: process.env['ACCESS_SECRET'],
     });
 
     return { accessToken };

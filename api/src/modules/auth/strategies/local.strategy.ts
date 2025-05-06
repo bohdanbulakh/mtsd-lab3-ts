@@ -11,17 +11,12 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
     super();
   }
 
-  async validate (username: string, password: string) {
-    const user = await this.userRepository.findOne({
-      OR: [
-        { username },
-        { email: username },
-      ],
-    });
+  async validate (email: string, password: string) {
+    const user = await this.userRepository.findOne({ email });
 
     if (!user) throw new InvalidEntityIdException('User');
-    await this.validatePassword(password, user.password);
-    user.password = null;
+    await this.validatePassword(password, user.password as string);
+    delete user.password;
     return user;
   }
 

@@ -5,7 +5,6 @@ import { AccessStrategy } from './strategies/access.strategy';
 import { AuthService } from './auth.service';
 import { PassportModule } from '@nestjs/passport';
 import { JwtService } from '@nestjs/jwt';
-import { RefreshStrategy } from './strategies/refresh.strategy';
 
 @Module({
   imports: [
@@ -17,7 +16,6 @@ import { RefreshStrategy } from './strategies/refresh.strategy';
     AuthService,
     LocalStrategy,
     AccessStrategy,
-    RefreshStrategy,
   ],
 })
 export class AuthModule {}

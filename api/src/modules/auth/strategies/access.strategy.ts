@@ -6,17 +6,16 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtPayload } from '../types/jwt.payload';
 import { CookieUtils } from '../../../common/utils/request.utils';
 import { UserEntity } from '../../../database/entities/user.entity';
-import { SecurityConfigService } from '../../../config/security-config.service';
+import * as process from 'node:process';
 
 @Injectable()
 export class AccessStrategy extends PassportStrategy(Strategy) {
   constructor (
     private readonly userRepository: UserRepository,
-    configService: SecurityConfigService,
   ) {
     super({
       jwtFromRequest: ExtractJwt.fromExtractors(CookieUtils.getRequestJwt('access')),
-      secretOrKey: configService.accessSecret,
+      secretOrKey: process.env['ACCESS_SECRET'] ?? '',
       ignoreExpiration: false,
     });
   }
@@ -27,7 +26,7 @@ export class AccessStrategy extends PassportStrategy(Strategy) {
     const user = await this.userRepository.findById(payload.sub);
     if (!user) throw new InvalidEntityIdException('User');
 
-    user.password = null;
+    delete user.password;
     return user;
   }
 }
