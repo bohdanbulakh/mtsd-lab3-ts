@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: postgres-mtsd-lab3
+    restart: unless-stopped
+    volumes:
+      - ~/deployment/mtsd-lab3/postgres-data:/var/lib/postgresql/data
+    ports:
+      - "4000:5432"
+    env_file:
+      - ~/deployment/mtsd-lab3/env/.postgres.env
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower-mtsd-lab3
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command:
+      - "--cleanup"
+      - "-i"
+      - "60"
