@@ -8,7 +8,9 @@ import * as bcrypt from 'bcrypt';
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
   constructor (private readonly userRepository: UserRepository) {
-    super();
+    super({
+      usernameField: 'email'
+    });
   }
 
   async validate (email: string, password: string) {
