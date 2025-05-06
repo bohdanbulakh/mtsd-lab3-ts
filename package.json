@@ -3,9 +3,11 @@
   "packageManager": "yarn@4.5.2",
   "workspaces": [
     "api",
-    "web"
+    "web",
+    "utils"
   ],
   "devDependencies": {
-    "eslint-plugin-unused-imports": "^4.1.4"
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "turbo": "^2.5.3"
   }
 }
