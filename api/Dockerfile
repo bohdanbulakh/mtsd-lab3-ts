@@ -12,7 +12,7 @@ RUN npx prisma generate --schema api/prisma/schema.prisma
 RUN turbo build --filter=api
 RUN yarn workspaces focus --all --production
 
-FROM node:22.15.0-bullseye-slim
+FROM gcr.io/distroless/nodejs22
 
 WORKDIR /app
 
