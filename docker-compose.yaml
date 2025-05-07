@@ -1,6 +1,18 @@
 version: '3'
 
 services:
+  api:
+    image: bohdanbulakh/mtsd-lab3
+    container_name: mtsd-lab3-api
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - watchtower
+    ports:
+      - "3001:3000"
+    env_file:
+      - ~/deployment/mtsd-lab3/env/.mtsd-lab3-api.env
+
   postgres:
     image: postgres:17-alpine
     container_name: postgres-mtsd-lab3
