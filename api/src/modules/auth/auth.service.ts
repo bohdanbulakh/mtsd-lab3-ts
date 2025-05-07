@@ -54,7 +54,7 @@ export class AuthService {
     return bcrypt.hash(password, salt);
   }
 
-  private createPayload ({ id: sub }: UserEntity): JwtPayload {
+  private createPayload ({ email: sub }: UserEntity): JwtPayload {
     return { sub };
   }
 }

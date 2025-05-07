@@ -8,6 +8,7 @@ import { LocalGuard } from '../../common/guards/auth/local.guard';
 import { ApiEndpoint } from 'src/common/decorators/api-endpoint.decorator';
 import { RegisterDTO } from '@mtsd-lab3/utils';
 import { AuthDocumentation } from '../../common/documentation/modules/auth';
+import { AccessGuard } from '../../common/guards/auth/access.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -44,6 +45,7 @@ export class AuthController {
   @Post('/logout')
   @ApiEndpoint({
     summary: 'Logout',
+    guards: AccessGuard,
     documentation: AuthDocumentation.LOGOUT,
   })
   logout (

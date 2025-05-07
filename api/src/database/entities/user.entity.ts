@@ -1,10 +1,9 @@
 import { OrderEntity } from './order.entity';
 
 export class UserEntity {
-  id: string;
+  email: string;
   firstName: string;
   lastName: string;
   password?: string;
-  email: string;
   orders: OrderEntity[];
 }
