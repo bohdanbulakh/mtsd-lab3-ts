@@ -10,3 +10,7 @@
 **/*.log
 Dockerfile
 .dockerignore
+web
+.github
+.yarn
+.idea
