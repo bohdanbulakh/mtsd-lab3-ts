@@ -1,4 +1,4 @@
-FROM node:22.15.0-bullseye-slim AS alpine
+FROM node:22-alpine AS alpine
 
 RUN npm install turbo --global
 RUN corepack enable
