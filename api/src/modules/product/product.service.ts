@@ -18,7 +18,8 @@ export class ProductService {
   ]
 
   async getAll () {
-    return this.productRepository.findMany({})
+    const products = await this.productRepository.findMany({})
+    return { products };
   }
 
   async getById (id: string) {

@@ -14,7 +14,7 @@ export class CreateProductDTO {
     icon?: string;
 
   @ApiProperty({ description: 'Product\'s price' })
-  @IsNotEmpty(message.notEmpty('Name'))
+  @IsNotEmpty(message.notEmpty('Price'))
   @IsNumber({}, message.ofType('Price', 'a number'))
     price: number;
 
