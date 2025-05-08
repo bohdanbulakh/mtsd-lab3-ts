@@ -776,6 +776,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hookform/resolvers@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "@hookform/resolvers@npm:5.0.1"
+  dependencies:
+    "@standard-schema/utils": "npm:^0.3.0"
+  peerDependencies:
+    react-hook-form: ^7.55.0
+  checksum: 10c0/8260de1cd1b8b53629ea67555f3f027fdeabf4cd6da7f20cb76e646d353d998e61cf3a338d6313c94a31f32c23447403df5e584e5c8dddbca766ed7776513f8b
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -2266,6 +2277,72 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-compose-refs@npm:1.1.2":
+  version: 1.1.2
+  resolution: "@radix-ui/react-compose-refs@npm:1.1.2"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/d36a9c589eb75d634b9b139c80f916aadaf8a68a7c1c4b8c6c6b88755af1a92f2e343457042089f04cc3f23073619d08bb65419ced1402e9d4e299576d970771
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-label@npm:^2.1.6":
+  version: 2.1.6
+  resolution: "@radix-ui/react-label@npm:2.1.6"
+  dependencies:
+    "@radix-ui/react-primitive": "npm:2.1.2"
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 10c0/1c94bd363b965aeeb6010539399da4bb894c29bcb777d11f6e9a0ab22c43621be59529f1a23cfbda1f3c0ba3d8a6fdd2a50200b6e9b5839a3fbf0c2299de163e
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-primitive@npm:2.1.2":
+  version: 2.1.2
+  resolution: "@radix-ui/react-primitive@npm:2.1.2"
+  dependencies:
+    "@radix-ui/react-slot": "npm:1.2.2"
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 10c0/0c1b4b5d2f225dc85e02a915b362e38383eb3bd6d150a72cb9183485c066156caad1a9f530202b84a5ad900d365302c0843fdcabb13100808872b3655709099d
+  languageName: node
+  linkType: hard
+
+"@radix-ui/react-slot@npm:1.2.2, @radix-ui/react-slot@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "@radix-ui/react-slot@npm:1.2.2"
+  dependencies:
+    "@radix-ui/react-compose-refs": "npm:1.1.2"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/74489f5ad11b17444560a1cdd664c01308206ce5cb9fcd46121b45281ece20273948479711411223c1081f709c15409242d51ca6cc57ff81f6335d70e0cbe0b5
+  languageName: node
+  linkType: hard
+
 "@rtsao/scc@npm:^1.1.0":
   version: 1.1.0
   resolution: "@rtsao/scc@npm:1.1.0"
@@ -2323,6 +2400,13 @@ __metadata:
   dependencies:
     "@sinonjs/commons": "npm:^3.0.0"
   checksum: 10c0/2e2fb6cc57f227912814085b7b01fede050cd4746ea8d49a1e44d5a0e56a804663b0340ae2f11af7559ea9bf4d087a11f2f646197a660ea3cb04e19efc04aa63
+  languageName: node
+  linkType: hard
+
+"@standard-schema/utils@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@standard-schema/utils@npm:0.3.0"
+  checksum: 10c0/6eb74cd13e52d5fc74054df51e37d947ef53f3ab9e02c085665dcca3c38c60ece8d735cebbdf18fbb13c775fbcb9becb3f53109b0e092a63f0f7389ce0993fd0
   languageName: node
   linkType: hard
 
@@ -4601,6 +4685,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"class-variance-authority@npm:^0.7.1":
+  version: 0.7.1
+  resolution: "class-variance-authority@npm:0.7.1"
+  dependencies:
+    clsx: "npm:^2.1.1"
+  checksum: 10c0/0f438cea22131808b99272de0fa933c2532d5659773bfec0c583de7b3f038378996d3350683426b8e9c74a6286699382106d71fbec52f0dd5fbb191792cccb5b
+  languageName: node
+  linkType: hard
+
 "cli-cursor@npm:^3.1.0":
   version: 3.1.0
   resolution: "cli-cursor@npm:3.1.0"
@@ -4659,6 +4752,13 @@ __metadata:
   version: 1.0.4
   resolution: "clone@npm:1.0.4"
   checksum: 10c0/2176952b3649293473999a95d7bebfc9dc96410f6cbd3d2595cf12fd401f63a4bf41a7adbfd3ab2ff09ed60cb9870c58c6acdd18b87767366fabfc163700f13b
+  languageName: node
+  linkType: hard
+
+"clsx@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: 10c0/c4c8eb865f8c82baab07e71bfa8897c73454881c4f99d6bc81585aecd7c441746c1399d08363dc096c550cceaf97bd4ce1e8854e1771e9998d9f94c4fe075839
   languageName: node
   linkType: hard
 
@@ -8396,6 +8496,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-react@npm:^0.508.0":
+  version: 0.508.0
+  resolution: "lucide-react@npm:0.508.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10c0/8eb9bc74ebeba85967328c236c5300aa2070d073e79cb88b6c968fd5d805d028aa3a64649d6b7711e92b5e2e873d8c961641d691e135e0e43056d3be1e3e7f87
+  languageName: node
+  linkType: hard
+
 "magic-string@npm:0.30.17":
   version: 0.30.17
   resolution: "magic-string@npm:0.30.17"
@@ -9678,6 +9787,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.56.3":
+  version: 7.56.3
+  resolution: "react-hook-form@npm:7.56.3"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18 || ^19
+  checksum: 10c0/9467b027fd030d93ba3c8de85853d381ca92ba70bfdb9d0569a63dae44c1459082f5863a4ceb8690789a7185a588516182904db4c72546119c966bf25316d591
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -10393,6 +10511,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sonner@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "sonner@npm:2.0.3"
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+    react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+  checksum: 10c0/59f84142f7a692dd1ec90e6df2003a70ff0b325eaef1d5dd17ad250e7f992b71053824f1a7ab3912f8c4caa5ce30523a096b5f5108b3e8ae13f906048691aca1
+  languageName: node
+  linkType: hard
+
 "sort-keys-length@npm:^1.0.0":
   version: 1.0.1
   resolution: "sort-keys-length@npm:1.0.1"
@@ -10819,6 +10947,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tailwind-merge@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "tailwind-merge@npm:3.2.0"
+  checksum: 10c0/294f6c2db0df74405bff126107107426c3126a70a1717d78e8d6811db65546c9bb3d61282bdb8d9fbded23f6bc8ec3e8e61031a4f53265f90b7f3dba558f88f4
+  languageName: node
+  linkType: hard
+
 "tailwindcss@npm:4.1.5, tailwindcss@npm:^4":
   version: 4.1.5
   resolution: "tailwindcss@npm:4.1.5"
@@ -11217,6 +11352,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tw-animate-css@npm:^1.2.9":
+  version: 1.2.9
+  resolution: "tw-animate-css@npm:1.2.9"
+  checksum: 10c0/ffbd6dfbb34490a8752b185b40192168ce4bfa69949d153dc831d9471dec2758501f27f1784b6615de7da73a546d01d7201ed691f5220fe3e0a53694cb275a3a
+  languageName: node
+  linkType: hard
+
 "type-check@npm:^0.4.0, type-check@npm:~0.4.0":
   version: 0.4.0
   resolution: "type-check@npm:0.4.0"
@@ -11609,17 +11751,28 @@ __metadata:
   resolution: "web@workspace:web"
   dependencies:
     "@eslint/eslintrc": "npm:^3"
+    "@hookform/resolvers": "npm:^5.0.1"
+    "@radix-ui/react-label": "npm:^2.1.6"
+    "@radix-ui/react-slot": "npm:^1.2.2"
     "@tailwindcss/postcss": "npm:^4"
     "@types/node": "npm:^20"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
+    class-variance-authority: "npm:^0.7.1"
+    clsx: "npm:^2.1.1"
     eslint: "npm:^9"
     eslint-config-next: "npm:15.3.1"
+    lucide-react: "npm:^0.508.0"
     next: "npm:15.3.1"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
+    react-hook-form: "npm:^7.56.3"
+    sonner: "npm:^2.0.3"
+    tailwind-merge: "npm:^3.2.0"
     tailwindcss: "npm:^4"
+    tw-animate-css: "npm:^1.2.9"
     typescript: "npm:^5"
+    zod: "npm:^3.24.4"
   languageName: unknown
   linkType: soft
 
@@ -11936,7 +12089,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.23.8, zod@npm:^3.24.2":
+"zod@npm:^3.23.8, zod@npm:^3.24.2, zod@npm:^3.24.4":
   version: 3.24.4
   resolution: "zod@npm:3.24.4"
   checksum: 10c0/ab3112f017562180a41a0f83d870b333677f7d6b77f106696c56894567051b91154714a088149d8387a4f50806a2520efcb666f108cd384a35c236a191186d91
