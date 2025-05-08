@@ -23,6 +23,8 @@ export class CookieUtils {
     res.cookie(tokenName, token, {
       httpOnly: true,
       secure: true,
+      sameSite: 'none',
+      domain: 'mtsd-lab3.pp.ua',
       ...options,
     });
   }
@@ -40,6 +42,6 @@ export class CookieUtils {
   static clearResponseCookie (res: Response) {
     CookieUtils.setResponseJwt(res, '', {
       accessExpires: 0,
-    })
+    });
   }
 }
