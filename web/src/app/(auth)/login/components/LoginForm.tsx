@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import {
   Form,
@@ -24,7 +25,8 @@ import {
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { PasswordInput } from '@/components/ui/password-input';
-import { redirect } from 'next/navigation';
+import AuthApi from '@/lib/api/auth/AuthApi';
+import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Invalid email address' }),
@@ -43,9 +45,25 @@ export default function LoginForm () {
     },
   });
 
+  const queryClient = useQueryClient();
+  const router = useRouter();
+
+  const mutation = useMutation({
+    mutationFn: async (data: z.infer<typeof formSchema>) => await AuthApi.login(data),
+    onSuccess: () => {
+      toast.success('Logged in successfully!');
+      queryClient.invalidateQueries({ queryKey: ['currentUser'] });
+      router.push('/');
+    },
+    onError: (error: any) => {
+      const message =
+        error.response?.data?.message || 'Login failed. Please try again.';
+      toast.error(message);
+    },
+  });
+
   function onSubmit (values: z.infer<typeof formSchema>) {
-    toast.success('Logged in successfully!');
-    redirect('/');
+    mutation.mutate(values);
   }
 
   return (
@@ -104,8 +122,13 @@ export default function LoginForm () {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" className="w-full text-lg" size="lg">
-                  Login
+                <Button
+                  type="submit"
+                  className="w-full text-lg"
+                  size="lg"
+                  disabled={mutation.isLoading}
+                >
+                  {mutation.isLoading ? 'Logging in...' : 'Login'}
                 </Button>
               </div>
             </form>
