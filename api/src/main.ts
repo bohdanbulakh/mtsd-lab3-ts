@@ -4,7 +4,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
 import * as cookieParser from 'cookie-parser';
 
-async function bootstrap() {
+async function bootstrap () {
   const port = process.env.PORT ?? 3000;
   const app = await NestFactory.create(AppModule);
   app.use(cookieParser());
@@ -14,6 +14,11 @@ async function bootstrap() {
       whitelist: true,
     })
   );
+
+  app.enableCors({
+    origin: true,
+    credentials: true,
+  });
 
   const config = new DocumentBuilder()
     .setTitle('Store API')
