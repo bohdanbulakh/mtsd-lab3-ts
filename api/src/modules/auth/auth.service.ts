@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { UserRepository } from '../../database/repositories/user.repository';
-import * as bcrypt from 'bcrypt'
+import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { AlreadyRegisteredException } from '../../common/exceptions/already-registered.exception';
 import { UserEntity } from '../../database/entities/user.entity';
@@ -56,5 +56,11 @@ export class AuthService {
 
   private createPayload ({ email: sub }: UserEntity): JwtPayload {
     return { sub };
+  }
+
+  async me (email: string) {
+    const user = await  this.userRepository.findById(email);
+    delete user.password;
+    return user;
   }
 }

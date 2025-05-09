@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Res } from '@nestjs/common';
+import { Body, Controller, Get, Post, Res } from '@nestjs/common';
 import { CookieUtils } from '../../common/utils/request.utils';
 import { GetUser } from '../../common/decorators/get-user.decorator';
 import { UserEntity } from '../../database/entities/user.entity';
@@ -52,5 +52,17 @@ export class AuthController {
     @Res({ passthrough: true }) response: Response,
   ) {
     CookieUtils.clearResponseCookie(response);
+  }
+
+  @Get('/me')
+  @ApiEndpoint({
+    summary: 'Get user info',
+    guards: AccessGuard,
+    documentation: AuthDocumentation.ME,
+  })
+  me (
+    @GetUser('email') email: string,
+  ) {
+    return this.authService.me(email);
   }
 }
