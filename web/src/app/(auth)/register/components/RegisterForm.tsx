@@ -98,7 +98,7 @@ export default function RegisterForm () {
 
   return (
     <div className="flex flex-col min-h-[50vh] h-full w-full items-center justify-center px-4">
-      <Card className="mx-auto max-w-1/3 w-full max-h-full">
+      <Card className="mx-auto min-w-fit max-w-1/3 w-full max-h-full">
         <CardHeader>
           <CardTitle className="text-4xl">Register</CardTitle>
           <CardDescription className="text-xl">
