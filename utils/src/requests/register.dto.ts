@@ -18,16 +18,16 @@ export class RegisterDTO {
 
   @ApiProperty({ description: 'User\'s first name in the application' })
   @Matches(
-    new RegExp('^[' + UKR_REGEX + UKRSPEC_REGEX + ']{2,40}$'),
-    message.custom('First name is not correct (A-Я(укр.)\\-\' ), or too short (min: 2), or too long (max: 40)'))
+    new RegExp('.{2,40}$'),
+    message.custom('First name is too short (min: 2) or too long (max: 40)'))
   @IsNotEmpty(message.notEmpty('First name'))
   @IsString(message.ofType('First name', 'a string'))
     firstName: string;
 
   @ApiProperty({ description: 'User\'s last name in the application' })
   @Matches(
-    new RegExp('^[' + UKR_REGEX + UKRSPEC_REGEX + ']{2,40}$'),
-    message.custom('Last name is not correct (A-Я(укр.)\\-\' ), or too short (min: 2), or too long (max: 40)'))
+    new RegExp('.{2,40}$'),
+    message.custom('First name is too short (min: 2) or too long (max: 40)'))
   @IsNotEmpty(message.notEmpty('Last name'))
   @IsString(message.ofType('Last name', 'string'))
     lastName: string;

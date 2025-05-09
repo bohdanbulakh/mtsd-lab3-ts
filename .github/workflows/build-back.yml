@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'api/**'
+      - 'utils/**'
 
 jobs:
   build:
