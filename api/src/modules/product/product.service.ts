@@ -5,21 +5,25 @@ import { random } from '../../common/utils/array.utils';
 
 @Injectable()
 export class ProductService {
-  constructor (
-    private readonly productRepository: ProductRepository,
-  ) {}
+  constructor (private readonly productRepository: ProductRepository) {}
 
   defaultIcons = [
     'https://imgur.com/W7ZrWRV',
     'https://imgur.com/jYEa07k',
     'https://imgur.com/2RbUFUq',
     'https://imgur.com/7nXH4bK',
-    'https://imgur.com/FjZwKxR'
-  ]
+    'https://imgur.com/FjZwKxR',
+  ];
 
   async getAll () {
-    const products = await this.productRepository.findMany({})
-    return { products };
+    const products = await this.productRepository.findMany({});
+    const result = products.map(({ id, name, icon, price }) => ({
+      id,
+      name,
+      icon,
+      price,
+    }));
+    return { products: result };
   }
 
   async getById (id: string) {

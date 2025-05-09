@@ -1,10 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ProductResponse } from './product.response';
+import { ShortProductResponse } from './short-product.response';
 
 export class ProductsResponse {
   @ApiProperty({
     description: 'Products',
-    type: [ProductResponse],
+    type: [ShortProductResponse],
   })
-    products: ProductResponse[];
+    products: ShortProductResponse[];
 }
