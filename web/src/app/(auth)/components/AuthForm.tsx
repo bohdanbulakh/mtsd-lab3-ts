@@ -58,7 +58,7 @@ export default function AuthForm ({
 }: FormProps) {
   const defaultValues: { [p: string]: any } = {};
 
-  for (const key in defaultValues) {
+  for (const key in values) {
     defaultValues[key] = values[key].default;
   }
 
@@ -72,68 +72,66 @@ export default function AuthForm ({
   }
 
   return (
-    <div className="flex flex-col min-h-[50vh] h-full w-full items-center justify-center px-4">
-      <Card className="mx-auto min-w-fit max-w-1/3 w-full max-h-full">
-        <CardHeader>
-          <CardTitle className="text-4xl">{title}</CardTitle>
-          <CardDescription className="text-xl">{description}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form
-              autoComplete="off"
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-8"
-            >
-              <div className="grid gap-8">
-                {...Object.entries(values).map(([name, values]) => {
-                  const otherProps = {
-                    placeholder: values.placeholder,
-                    type: values.type,
-                    autoComplete: values.autoComplete,
-                  };
+    <Card className="mx-auto min-w-fit max-w-1/3 w-full max-h-full">
+      <CardHeader>
+        <CardTitle className="text-4xl">{title}</CardTitle>
+        <CardDescription className="text-xl">{description}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Form {...form}>
+          <form
+            autoComplete="off"
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-8"
+          >
+            <div className="grid gap-8">
+              {...Object.entries(values).map(([name, values]) => {
+                const otherProps = {
+                  placeholder: values.placeholder,
+                  type: values.type,
+                  autoComplete: values.autoComplete,
+                };
 
-                  const filtered = Object.fromEntries(
-                    Object.entries(otherProps).filter(
-                      ([_, value]) => value !== undefined,
-                    ),
-                  );
+                const filtered = Object.fromEntries(
+                  Object.entries(otherProps).filter(
+                    ([_, value]) => value !== undefined,
+                  ),
+                );
 
-                  return (
-                    <FormField
-                      control={form.control}
-                      name={name}
-                      render={({ field }) => (
-                        <FormItem className="grid gap-2">
-                          <FormLabel htmlFor={name} className="text-lg">
-                            {values.label}
-                          </FormLabel>
-                          <FormControl>
-                            <values.component
-                              id={name}
-                              {...{ ...filtered, ...field }}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  );
-                })}
-                <Button
-                  type="submit"
-                  className="w-full text-lg"
-                  size="lg"
-                  disabled={mutation.isLoading}
-                >
-                  {mutation.isLoading ? 'Processing...' : button}
-                </Button>
-              </div>
-            </form>
-          </Form>
-          {OtherAuth}
-        </CardContent>
-      </Card>
-    </div>
+                return (
+                  <FormField
+                    control={form.control}
+                    name={name}
+                    render={({ field }) => (
+                      <FormItem className="grid gap-2">
+                        <FormLabel htmlFor={name} className="text-lg">
+                          {values.label}
+                        </FormLabel>
+                        <FormControl>
+                          <values.component
+                            id={name}
+                            {...{ ...filtered, ...field }}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                );
+              })}
+              <Button
+                type="submit"
+                className="w-full text-lg"
+                size="lg"
+                disabled={mutation.isLoading}
+              >
+                {mutation.isLoading ? 'Processing...' : button}
+              </Button>
+            </div>
+          </form>
+        </Form>
+        {OtherAuth}
+      </CardContent>
+    </Card>
   );
 }

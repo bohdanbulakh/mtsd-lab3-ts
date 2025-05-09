@@ -33,7 +33,8 @@ export default function RootLayout ({
       >
         <Providers>
           <Header />
-          {children}
+          <div className="flex flex-col min-h-[50vh] h-full w-full items-center justify-center px-4 mt-10">
+            {children}</div>
         </Providers>
         <Toaster closeButton />
       </body>
