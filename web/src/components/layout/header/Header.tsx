@@ -1,7 +1,6 @@
 'use client';
 
 import * as React from 'react';
-import Link from 'next/link';
 
 import {
   NavigationMenu,
@@ -16,18 +15,20 @@ export default function Header () {
     <NavigationMenu className="h-20 max-w-screen">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <Link href="/login"  passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Login
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink
+            href="/login"
+            className={navigationMenuTriggerStyle()}
+          >
+            Login
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/register"  passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Register
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink
+            href="/register"
+            className={navigationMenuTriggerStyle()}
+          >
+            Register
+          </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
