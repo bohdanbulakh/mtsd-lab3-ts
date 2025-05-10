@@ -12,8 +12,8 @@ class ProductAPII {
     return data;
   }
 
-  async addToChart (id: string) {
-    const { data } = await client.post<void>(`/product/${id}/addToChart`);
+  async addToCart (id: string) {
+    const { data } = await client.post<void>(`/product/${id}/addToCart`);
     return data;
   }
 }

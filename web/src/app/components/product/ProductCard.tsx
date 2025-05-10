@@ -36,7 +36,7 @@ export default function ProductCard ({ product }: Props) {
         </CardDescription>
         <div className="flex gap-2">
           <Label className="mr-auto text-xl">{product.price}$</Label>
-          <ClientButton product={product}>Add to chart</ClientButton>
+          <ClientButton product={product}>Add to cart</ClientButton>
         </div>
       </CardContent>
     </Card>

@@ -68,16 +68,16 @@ export class ProductController {
     return this.productService.deleteById(id);
   }
 
-  @Post(':id/addToChart')
+  @Post(':id/addToCart')
   @ApiEndpoint({
-    summary: 'Add a product to chart',
-    documentation: ProductDocumentation.ADD_TO_CHART,
+    summary: 'Add a product to cart',
+    documentation: ProductDocumentation.ADD_TO_CART,
     guards: AccessGuard,
   })
-  async addToChart (
+  async addToCart (
     @GetUser('email') email: string,
     @Param('id', ProductByIdPipe) productId: string,
   ) {
-    return this.productService.addToChart(email, productId);
+    return this.productService.addToCart(email, productId);
   }
 }

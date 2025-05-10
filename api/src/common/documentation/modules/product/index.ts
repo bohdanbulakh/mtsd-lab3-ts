@@ -3,7 +3,7 @@ import { GetById } from './getById';
 import { Create } from './create';
 import { UpdateById } from './updateById';
 import { DeleteById } from './deleteById';
-import { AddToChart } from './addToChart';
+import { AddToCart } from './addToCart';
 
 export const ProductDocumentation = {
   GET_ALL: GetAll,
@@ -11,5 +11,5 @@ export const ProductDocumentation = {
   CREATE: Create,
   UPDATE_BY_ID: UpdateById,
   DELETE_BY_ID: DeleteById,
-  ADD_TO_CHART: AddToChart,
+  ADD_TO_CART: AddToCart,
 };

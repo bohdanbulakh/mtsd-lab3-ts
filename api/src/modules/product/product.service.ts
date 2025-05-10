@@ -48,7 +48,7 @@ export class ProductService {
     return this.productRepository.deleteById(id);
   }
 
-  async addToChart (userId: string, productId: string) {
+  async addToCart (userId: string, productId: string) {
     const order =
       (await this.orderRepository.findOne({ finished: false, userId })) ??
       (await this.orderRepository.create({ userId }));

@@ -1,6 +1,6 @@
 import { ApiDocumentationParams } from '../../types/api-documentation-params.type';
 
-export const AddToChart: ApiDocumentationParams = {
+export const AddToCart: ApiDocumentationParams = {
   isAuth: true,
   created: 'default',
   unauthorized: 'default',

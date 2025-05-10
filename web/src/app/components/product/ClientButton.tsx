@@ -17,11 +17,11 @@ export default function ClientButton ({ children, product }: Props) {
 
   async function onClick () {
     try {
-      await ProductAPI.addToChart(product.id);
-      toast.success(`${capitalize(product.name)} added to chart`);
+      await ProductAPI.addToCart(product.id);
+      toast.success(`${capitalize(product.name)} added to cart`);
     } catch (error: any) {
       if (error.status === 401) {
-        toast.info('Please, log in to add products to chart');
+        toast.info('Please, log in to add products to cart');
         router.push('/login');
       } else {
         toast.error(error.message);
