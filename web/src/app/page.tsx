@@ -8,6 +8,7 @@ export default async function Home () {
   try {
     products = await ProductAPI.getAll();
   } catch (err) {
+    console.error(err);
     error = err;
   }
 
