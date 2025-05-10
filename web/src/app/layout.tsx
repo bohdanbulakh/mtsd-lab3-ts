@@ -39,7 +39,7 @@ export default function RootLayout ({
             {children}
           </div>
         </Providers>
-        <Toaster closeButton />
+        <Toaster />
         <SpeedInsights />
         <Analytics />
       </body>
