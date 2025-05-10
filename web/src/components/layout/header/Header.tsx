@@ -19,15 +19,7 @@ export default function Header () {
             href="/login"
             className={navigationMenuTriggerStyle()}
           >
-            Login
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink
-            href="/register"
-            className={navigationMenuTriggerStyle()}
-          >
-            Register
+            User Info
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

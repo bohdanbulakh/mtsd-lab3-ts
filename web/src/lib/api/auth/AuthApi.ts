@@ -4,7 +4,6 @@ import { LoginDTO, RegisterDTO } from '@mtsd-lab3/utils';
 class AuthAPI {
   async register (body: RegisterDTO) {
     const { data } = await client.post<void>('/auth/register', body);
-    console.log(data);
     return data;
   }
 
@@ -15,6 +14,11 @@ class AuthAPI {
 
   async logout (body: LoginDTO) {
     const { data } = await client.post<void>('/auth/logout', body);
+    return data;
+  }
+
+  async me () {
+    const { data } = await client.get<void>('/auth/me');
     return data;
   }
 }
