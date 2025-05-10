@@ -1,5 +1,5 @@
 import ProductAPI from '@/lib/api/product/ProductAPI';
-import ProductCard from '@/app/components/ProductCard';
+import ProductCard from '@/app/components/product/ProductCard';
 
 export default async function Home () {
   let products = null;

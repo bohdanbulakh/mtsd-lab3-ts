@@ -11,6 +11,11 @@ class ProductAPII {
     const { data } = await client.get<ProductResponse>(`/product/${id}`);
     return data;
   }
+
+  async addToChart (id: string) {
+    const { data } = await client.post<void>(`/product/${id}/addToChart`);
+    return data;
+  }
 }
 
 export default new ProductAPII();
