@@ -14,5 +14,5 @@ export const GetById: ApiDocumentationParams = {
     name: 'id',
     required: true,
     description: 'Product id',
-  }]
-}
+  }],
+};

@@ -6,6 +6,7 @@ export const UpdateById: ApiDocumentationParams = {
   ok: {
     type: ProductResponse,
   },
+  unauthorized: 'default',
   badRequest: {
     description: `\n
     InvalidEntityIdException:
@@ -21,5 +22,5 @@ export const UpdateById: ApiDocumentationParams = {
     name: 'id',
     required: true,
     description: 'Product id',
-  }]
-}
+  }],
+};

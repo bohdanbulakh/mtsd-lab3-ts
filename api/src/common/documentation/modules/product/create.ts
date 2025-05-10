@@ -6,6 +6,7 @@ export const Create: ApiDocumentationParams = {
   ok: {
     type: ProductResponse,
   },
+  unauthorized: 'default',
   badRequest: {
     description: `\n
     InvalidBodyIdException:
@@ -16,4 +17,4 @@ export const Create: ApiDocumentationParams = {
       Price must be a string
       Description must be a string`,
   },
-}
+};

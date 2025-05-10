@@ -6,6 +6,7 @@ export const DeleteById: ApiDocumentationParams = {
   ok: {
     type: ProductResponse,
   },
+  unauthorized: 'default',
   badRequest: {
     description: `\n
     InvalidEntityIdException:
@@ -15,5 +16,5 @@ export const DeleteById: ApiDocumentationParams = {
     name: 'id',
     required: true,
     description: 'Product id',
-  }]
-}
+  }],
+};

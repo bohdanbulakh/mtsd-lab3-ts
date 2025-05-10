@@ -10,4 +10,4 @@ export const ProductDocumentation = {
   CREATE: Create,
   UPDATE_BY_ID: UpdateById,
   DELETE_BY_ID: DeleteById,
-}
+};
