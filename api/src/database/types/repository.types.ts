@@ -11,3 +11,5 @@ export type TSort<Model extends TModels> = Prisma.TypeMap['model'][Capitalize<Mo
 export type TWhere<Model extends TModels> = Prisma.TypeMap['model'][Capitalize<Model>]['operations']['findFirst']['args']['where'];
 
 export type TWhereUnique<Model extends TModels> = Prisma.TypeMap['model'][Capitalize<Model>]['operations']['findUnique']['args']['where'];
+
+export type TInclude<Model extends TModels> = Prisma.TypeMap['model'][Capitalize<Model>]['operations']['findFirst']['args']['include'];

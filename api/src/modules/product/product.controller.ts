@@ -5,6 +5,7 @@ import { ProductByIdPipe } from '../../common/pipes/product-by-id.pipe';
 import { ApiEndpoint } from '../../common/decorators/api-endpoint.decorator';
 import { ProductDocumentation } from '../../common/documentation/modules/product';
 import { AccessGuard } from '../../common/guards/auth/access.guard';
+import { GetUser } from '../../common/decorators/get-user.decorator';
 
 @Controller('product')
 export class ProductController {
@@ -36,7 +37,7 @@ export class ProductController {
     documentation: ProductDocumentation.CREATE,
     guards: AccessGuard,
   })
-  async create(
+  async create (
     @Body() body: CreateProductDTO,
   ) {
     return this.productService.create(body);
@@ -65,5 +66,18 @@ export class ProductController {
     @Param('id', ProductByIdPipe) id: string,
   ) {
     return this.productService.deleteById(id);
+  }
+
+  @Post(':id/addToChart')
+  @ApiEndpoint({
+    summary: 'Add a product to chart',
+    documentation: ProductDocumentation.ADD_TO_CHART,
+    guards: AccessGuard,
+  })
+  async addToChart (
+    @GetUser('email') email: string,
+    @Param('id', ProductByIdPipe) productId: string,
+  ) {
+    return this.productService.addToChart(email, productId);
   }
 }

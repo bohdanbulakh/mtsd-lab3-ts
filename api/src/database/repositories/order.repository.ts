@@ -5,7 +5,7 @@ import { OrderEntity } from '../entities/order.entity';
 
 @Injectable()
 export class OrderRepository extends PrismaRepository<'order', OrderEntity> {
-  constructor(prisma: PrismaService) {
-    super(prisma.order);
+  constructor (prisma: PrismaService) {
+    super(prisma.order, { orderProducts: true });
   }
 }
