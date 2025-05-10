@@ -21,7 +21,7 @@ model User {
   password  String
   orders    Order[]
 
-  @@map("user")
+  @@map("users")
 }
 
 model Product {
@@ -32,7 +32,7 @@ model Product {
   description   String?        @db.Text
   orderProducts OrderProduct[]
 
-  @@map("product")
+  @@map("products")
 }
 
 model Order {
@@ -42,7 +42,7 @@ model Order {
   finished      Boolean        @default(false)
   orderProducts OrderProduct[]
 
-  @@map("user_product")
+  @@map("orders")
 }
 
 model OrderProduct {
@@ -54,5 +54,5 @@ model OrderProduct {
   count     Int
 
   @@unique([orderId, productId])
-  @@map("order_product")
+  @@map("order_products")
 }
