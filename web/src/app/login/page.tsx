@@ -20,7 +20,7 @@ const formSchema = z.object({
     .regex(/[a-zA-Z0-9]/, { message: 'Password must be alphanumeric' }),
 });
 
-export default function RegisterForm () {
+export default function LoginForm () {
   const targetKey = useTranslations('login');
 
   const queryClient = useQueryClient();
@@ -31,14 +31,14 @@ export default function RegisterForm () {
       await AuthApi.login(data);
     },
     onSuccess: () => {
-      toast.success('Logged in successfully!');
-      queryClient.invalidateQueries({ queryKey: ['register'] });
+      toast.success(targetKey('toastSuccess'));
+      queryClient.invalidateQueries({ queryKey: ['login'] });
       router.push('/');
     },
     onError: (error: any) => {
       const message =
         error.response?.data?.message ||
-        'Registration failed. Please try again.';
+        targetKey('toastError');
       toast.error(message);
     },
   });

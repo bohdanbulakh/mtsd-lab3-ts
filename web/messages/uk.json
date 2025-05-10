@@ -3,7 +3,9 @@
     "account": "Акаунт"
   },
   "productCard": {
-    "button": "До кошика"
+    "button": "До кошика",
+    "toastSuccess": "додано до кошика",
+    "toastUnauthorized": "Увійдіть, щоб додати товар у кошик"
   },
   "auth": {
     "password": "Пароль"
@@ -12,7 +14,9 @@
     "title": "Вхід",
     "description": "Введіть свій email та пароль, щоб увійти",
     "button": "Увійти",
-    "redirectMessage": "Ще не зареєстровані?"
+    "redirectMessage": "Ще не зареєстровані?",
+    "toastSuccess": "Вхід виконано успішно",
+    "toastError": "Не вдалося увійти. Спробуйте пізніше"
   },
   "register": {
     "title": "Реєстрація",
@@ -23,6 +27,8 @@
     "firstName": "Ім'я",
     "firstNamePlaceholder": "Микола",
     "lastName": "Прізвище",
-    "lastNamePlaceholder": "Нестеренко"
+    "lastNamePlaceholder": "Нестеренко",
+    "toastSuccess": "Вхід виконано успішно",
+    "toastError": "Не вдалося створити обліковий запис. Спробуйте пізніше"
   }
 }

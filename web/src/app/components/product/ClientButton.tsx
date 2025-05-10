@@ -7,6 +7,7 @@ import { capitalize } from '@/lib/utils/general';
 import { ShortProductResponse } from '@mtsd-lab3/utils';
 import ProductAPI from '@/lib/api/product/ProductAPI';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 type Props = PropsWithChildren & {
   product: ShortProductResponse;
@@ -14,14 +15,15 @@ type Props = PropsWithChildren & {
 
 export default function ClientButton ({ children, product }: Props) {
   const router = useRouter();
+  const targetKey = useTranslations('productCard');
 
   async function onClick () {
     try {
       await ProductAPI.addToCart(product.id);
-      toast.success(`${capitalize(product.name)} added to cart`);
+      toast.success(`${capitalize(product.name)} ${targetKey('toastSuccess')}`);
     } catch (error: any) {
       if (error.status === 401) {
-        toast.info('Please, log in to add products to cart');
+        toast.info(targetKey('toastUnauthorized'));
         router.push('/login');
       } else {
         toast.error(error.message);

@@ -53,14 +53,14 @@ export default function RegisterForm () {
       await AuthApi.login(data);
     },
     onSuccess: () => {
-      toast.success('Logged in successfully!');
+      toast.success(targetKey('toastSuccess'));
       queryClient.invalidateQueries({ queryKey: ['register'] });
       router.push('/');
     },
     onError: (error: any) => {
       const message =
         error.response?.data?.message ||
-        'Registration failed. Please try again.';
+        targetKey('toastError');
       toast.error(message);
     },
   });
