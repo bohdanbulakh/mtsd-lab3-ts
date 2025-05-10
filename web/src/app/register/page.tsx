@@ -6,7 +6,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import AuthApi from '@/lib/api/auth/AuthApi';
 import { useRouter } from 'next/navigation';
-import AuthForm, { Values } from '@/app/(auth)/components/AuthForm';
+import AuthForm, { Values } from '@/app/components/AuthForm';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { PasswordInput } from '@/components/ui/password-input';
