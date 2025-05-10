@@ -1,0 +1,28 @@
+{
+  "header": {
+    "account": "Акаунт"
+  },
+  "productCard": {
+    "button": "До кошика"
+  },
+  "auth": {
+    "password": "Пароль"
+  },
+  "login": {
+    "title": "Вхід",
+    "description": "Введіть свій email та пароль, щоб увійти",
+    "button": "Увійти",
+    "redirectMessage": "Ще не зареєстровані?"
+  },
+  "register": {
+    "title": "Реєстрація",
+    "description": "Введіть дані про себе, щоб зареєструватися",
+    "button": "Зареєструватися",
+    "redirectMessage": "Вже маєте обліковий запис?",
+    "confirmPassword": "Підтвердження паролю",
+    "firstName": "Ім'я",
+    "firstNamePlaceholder": "Микола",
+    "lastName": "Прізвище",
+    "lastNamePlaceholder": "Нестеренко"
+  }
+}

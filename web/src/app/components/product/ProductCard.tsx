@@ -10,12 +10,15 @@ import { capitalize } from '@/lib/utils/general';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import Image from 'next/image';
 import ClientButton from '@/app/components/product/ClientButton';
+import { useTranslations } from 'next-intl';
 
 type Props = {
   product: ShortProductResponse;
 };
 
 export default function ProductCard ({ product }: Props) {
+  const targetKey = useTranslations('productCard');
+
   return (
     <Card className="min-w-60 min-h-40 max-w-96">
       <CardHeader className="text-2xl">
@@ -36,7 +39,7 @@ export default function ProductCard ({ product }: Props) {
         </CardDescription>
         <div className="flex gap-2">
           <Label className="mr-auto text-xl">{product.price}$</Label>
-          <ClientButton product={product}>Add to cart</ClientButton>
+          <ClientButton product={product}>{targetKey('button')}</ClientButton>
         </div>
       </CardContent>
     </Card>

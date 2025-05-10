@@ -10,6 +10,7 @@ import AuthForm, { Values } from '@/app/components/AuthForm';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { PasswordInput } from '@/components/ui/password-input';
+import { useTranslations } from 'next-intl';
 
 const formSchema = z
   .object({
@@ -44,6 +45,7 @@ const formSchema = z
 export default function RegisterForm () {
   const queryClient = useQueryClient();
   const router = useRouter();
+  const targetKey = useTranslations('register');
 
   const mutation = useMutation({
     mutationFn: async (data: z.infer<typeof formSchema>) => {
@@ -74,31 +76,31 @@ export default function RegisterForm () {
     },
     password: {
       default: '',
-      label: 'Password',
+      label: useTranslations('auth')('password'),
       component: PasswordInput,
       placeholder: '********',
       autoComplete: 'new-password',
     },
     confirmPassword: {
       default: '',
-      label: 'Confirm Password',
+      label: targetKey('confirmPassword'),
       component: PasswordInput,
       placeholder: '********',
       autoComplete: 'new-password',
     },
     firstName: {
       default: '',
-      label: 'First Name',
+      label: targetKey('firstName'),
       component: Input,
-      placeholder: 'Mykola',
+      placeholder: targetKey('firstNamePlaceholder'),
       type: 'text',
       autoComplete: 'given-name',
     },
     lastName: {
       default: '',
-      label: 'Last Name',
+      label: targetKey('lastName'),
       component: Input,
-      placeholder: 'Nestorenko',
+      placeholder: targetKey('lastNamePlaceholder'),
       type: 'text',
       autoComplete: 'family-name',
     },
@@ -106,20 +108,20 @@ export default function RegisterForm () {
 
   return (
     <AuthForm
-      title="Register"
-      description="Enter your info to create an account"
+      title={targetKey('title')}
+      description={targetKey('description')}
       formSchema={formSchema}
       mutation={mutation}
       values={values}
       OtherAuth={
         <div className="mt-8 text-center text-base">
-          Already have an account?{' '}
+          {targetKey('redirectMessage') + '\t'}
           <Link href="/login" className="underline">
-            Login
+            {useTranslations('login')('title')}
           </Link>
         </div>
       }
-      button="Register"
+      button={targetKey('button')}
     />
   );
 }

@@ -10,17 +10,19 @@ import AuthForm, { Values } from '@/app/components/AuthForm';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { PasswordInput } from '@/components/ui/password-input';
+import { useTranslations } from 'next-intl';
 
-const formSchema = z
-  .object({
-    email: z.string().email({ message: 'Invalid email address' }),
-    password: z
-      .string()
-      .min(6, { message: 'Password must be at least 6 characters long' })
-      .regex(/[a-zA-Z0-9]/, { message: 'Password must be alphanumeric' }),
-  });
+const formSchema = z.object({
+  email: z.string().email({ message: 'Invalid email address' }),
+  password: z
+    .string()
+    .min(6, { message: 'Password must be at least 6 characters long' })
+    .regex(/[a-zA-Z0-9]/, { message: 'Password must be alphanumeric' }),
+});
 
 export default function RegisterForm () {
+  const targetKey = useTranslations('login');
+
   const queryClient = useQueryClient();
   const router = useRouter();
 
@@ -52,7 +54,7 @@ export default function RegisterForm () {
     },
     password: {
       default: '',
-      label: 'Password',
+      label: useTranslations('auth')('password'),
       component: PasswordInput,
       placeholder: '********',
       autoComplete: 'current-password',
@@ -61,20 +63,20 @@ export default function RegisterForm () {
 
   return (
     <AuthForm
-      title="Login"
-      description="Enter your email and password to login to your account."
+      title={targetKey('title')}
+      description={targetKey('description')}
       formSchema={formSchema}
       mutation={mutation}
       values={values}
       OtherAuth={
         <div className="mt-8 text-center text-base">
-          Don&apos;t have an account?{' '}
+          {targetKey('redirectMessage') + '\t'}
           <Link href="/register" className="underline">
-            Sign up
+            {useTranslations('register')('title')}
           </Link>
         </div>
       }
-      button="Login"
+      button={targetKey('button')}
     />
   );
 }

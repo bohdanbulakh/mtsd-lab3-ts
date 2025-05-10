@@ -1,0 +1,28 @@
+{
+  "header": {
+    "account": "Account"
+  },
+  "productCard": {
+    "button": "Add to cart"
+  },
+  "auth": {
+    "password": "Password"
+  },
+  "login": {
+    "title": "Login",
+    "description": "Enter your email and password to login to your account",
+    "button": "Login",
+    "redirectMessage": "Don't have an account?"
+  },
+  "register": {
+    "title": "Sign up",
+    "description": "Enter your info to create an account",
+    "button": "Register",
+    "redirectMessage": "Already have an account?",
+    "confirmPassword": "Confirm password",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Mykola",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Nesterenko"
+  }
+}
