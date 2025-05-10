@@ -8,7 +8,8 @@
     "toastUnauthorized": "Please, log in to add products to cart"
   },
   "auth": {
-    "password": "Password"
+    "password": "Password",
+    "processing": "Processing..."
   },
   "login": {
     "title": "Login",

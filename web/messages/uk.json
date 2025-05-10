@@ -8,7 +8,8 @@
     "toastUnauthorized": "Увійдіть, щоб додати товар у кошик"
   },
   "auth": {
-    "password": "Пароль"
+    "password": "Пароль",
+    "processing": "Обробка..."
   },
   "login": {
     "title": "Вхід",

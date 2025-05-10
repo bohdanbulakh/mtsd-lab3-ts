@@ -25,6 +25,7 @@ import {
   HTMLInputTypeAttribute,
   ReactElement,
 } from 'react';
+import { useTranslations } from 'next-intl';
 
 export type Values = {
   [p: string]: {
@@ -57,6 +58,7 @@ export default function AuthForm ({
   button,
 }: FormProps) {
   const defaultValues: { [p: string]: any } = {};
+  const targetKey = useTranslations('auth');
 
   for (const key in values) {
     defaultValues[key] = values[key].default;
@@ -125,7 +127,7 @@ export default function AuthForm ({
                 size="lg"
                 disabled={mutation.isLoading}
               >
-                {mutation.isLoading ? 'Processing...' : button}
+                {mutation.isLoading ? targetKey('processing') : button}
               </Button>
             </div>
           </form>
