@@ -5,6 +5,8 @@ import { Toaster } from 'sonner';
 import { Providers } from '@/components/layout/providers';
 import { ReactNode } from 'react';
 import Header from '@/components/layout/header/Header';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,9 +36,12 @@ export default function RootLayout ({
         <Providers>
           <Header />
           <div className="flex flex-col min-h-[50vh] h-full w-full items-center justify-center px-4 mt-10">
-            {children}</div>
+            {children}
+          </div>
         </Providers>
         <Toaster closeButton />
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
