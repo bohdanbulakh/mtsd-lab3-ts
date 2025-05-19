@@ -9,6 +9,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 import { getLocale } from 'next-intl/server';
 import { clsx } from 'clsx';
+import { headers } from 'next/headers';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -20,10 +21,21 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
-  title: 'Store',
-  description: 'Demo app for lab 3 of MTSD course',
-};
+const title = 'Store';
+const description = 'Demo app for lab 3 of MTSD course';
+
+export async function generateMetadata (): Promise<Metadata> {
+  return {
+    metadataBase: new URL(`https://${(await headers()).get('host')}`),
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: '/logo.png',
+    },
+  };
+}
 
 type Props = {
   children: ReactNode;
