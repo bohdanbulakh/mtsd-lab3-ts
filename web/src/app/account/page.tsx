@@ -37,25 +37,18 @@ export default function AccountPage () {
       </CardHeader>
       <CardContent>
         <div className="grid gap-8">
-          {!isLoading && user ? (
-            <>
-              <LabelInput value={user.firstName}>
-                {commonKey('firstName')}
-              </LabelInput>
-              <LabelInput value={user.lastName}>
-                {commonKey('lastName')}
-              </LabelInput>
-              <LabelInput value={user.email}>Email</LabelInput>
-
-              <LogoutAlert onConfirm={() => onClick()}>
-                <Button className="w-full text-lg" size="lg">
-                  {targetKey('button')}
-                </Button>
-              </LogoutAlert>
-            </>
-          ) : (
-            <></>
-          )}
+          <LabelInput value={user?.firstName}>
+            {commonKey('firstName')}
+          </LabelInput>
+          <LabelInput value={user?.lastName}>
+            {commonKey('lastName')}
+          </LabelInput>
+          <LabelInput value={user?.email}>Email</LabelInput>
+          <LogoutAlert onConfirm={() => onClick()}>
+            <Button className="w-full text-lg" size="lg" disabled={isLoading}>
+              {targetKey('button')}
+            </Button>
+          </LogoutAlert>
         </div>
       </CardContent>
     </Card>
