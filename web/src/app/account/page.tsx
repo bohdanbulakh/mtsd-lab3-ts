@@ -13,6 +13,8 @@ import LogoutAlert from '@/app/account/LogoutAlert';
 
 export default function AccountPage () {
   const targetKey = useTranslations('account');
+  const commonKey = useTranslations('common');
+
   const router = useRouter();
   const { user, isLoading } = useAuthentication();
 
@@ -31,22 +33,23 @@ export default function AccountPage () {
   return (
     <Card className="mx-auto min-w-fit max-w-1/3 w-full max-h-full">
       <CardHeader>
-        <CardTitle className="text-4xl">Account info</CardTitle>
+        <CardTitle className="text-4xl">{targetKey('title')}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid gap-8">
           {!isLoading && user ? (
             <>
-              <LabelInput value={user.firstName}>First Name</LabelInput>
-              <LabelInput value={user.lastName}>Last Name</LabelInput>
+              <LabelInput value={user.firstName}>
+                {commonKey('firstName')}
+              </LabelInput>
+              <LabelInput value={user.lastName}>
+                {commonKey('lastName')}
+              </LabelInput>
               <LabelInput value={user.email}>Email</LabelInput>
 
               <LogoutAlert onConfirm={() => onClick()}>
-                <Button
-                  className="w-full text-lg"
-                  size="lg"
-                >
-                  Logout
+                <Button className="w-full text-lg" size="lg">
+                  {targetKey('button')}
                 </Button>
               </LogoutAlert>
             </>

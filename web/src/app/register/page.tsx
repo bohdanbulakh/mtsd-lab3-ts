@@ -46,6 +46,7 @@ export default function RegisterForm () {
   const queryClient = useQueryClient();
   const router = useRouter();
   const targetKey = useTranslations('register');
+  const commonKey = useTranslations('common');
 
   const mutation = useMutation({
     mutationFn: async (data: z.infer<typeof formSchema>) => {
@@ -90,7 +91,7 @@ export default function RegisterForm () {
     },
     firstName: {
       default: '',
-      label: targetKey('firstName'),
+      label: commonKey('firstName'),
       component: Input,
       placeholder: targetKey('firstNamePlaceholder'),
       type: 'text',
@@ -98,7 +99,7 @@ export default function RegisterForm () {
     },
     lastName: {
       default: '',
-      label: targetKey('lastName'),
+      label: commonKey('lastName'),
       component: Input,
       placeholder: targetKey('lastNamePlaceholder'),
       type: 'text',

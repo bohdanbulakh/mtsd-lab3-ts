@@ -11,6 +11,10 @@
     "password": "Пароль",
     "processing": "Обробка..."
   },
+  "common": {
+    "firstName": "Ім'я",
+    "lastName": "Прізвище"
+  },
   "login": {
     "title": "Вхід",
     "description": "Введіть свій email та пароль, щоб увійти",
@@ -25,14 +29,17 @@
     "button": "Зареєструватися",
     "redirectMessage": "Вже маєте обліковий запис?",
     "confirmPassword": "Підтвердження паролю",
-    "firstName": "Ім'я",
     "firstNamePlaceholder": "Микола",
-    "lastName": "Прізвище",
     "lastNamePlaceholder": "Нестеренко",
     "toastSuccess": "Вхід виконано успішно",
     "toastError": "Не вдалося створити обліковий запис. Спробуйте пізніше"
   },
   "account": {
-    "logoutToastSuccess": "Ви успішно вийшли з акаунту"
+    "logoutToastSuccess": "Ви успішно вийшли з акаунту",
+    "button": "Вийти",
+    "title": "Інформація про вас",
+    "logoutAlertTitle": "Справді хочете вийти?",
+    "logoutAlertConfirm": "Так, продовжити",
+    "logoutAlertCancel": "Відміна"
   }
 }

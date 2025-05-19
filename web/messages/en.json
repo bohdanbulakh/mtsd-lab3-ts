@@ -11,6 +11,10 @@
     "password": "Password",
     "processing": "Processing..."
   },
+  "common": {
+    "firstName": "First Name",
+    "lastName": "Last Name"
+  },
   "login": {
     "title": "Login",
     "description": "Enter your email and password to login to your account",
@@ -25,14 +29,17 @@
     "button": "Register",
     "redirectMessage": "Already have an account?",
     "confirmPassword": "Confirm password",
-    "firstName": "First Name",
     "firstNamePlaceholder": "Mykola",
-    "lastName": "Last Name",
     "lastNamePlaceholder": "Nesterenko",
     "toastSuccess": "Logged in successfully",
     "toastError": "Registration failed. Please try again"
   },
   "account": {
-    "logoutToastSuccess": "Logged out successfully"
+    "logoutToastSuccess": "Logged out successfully",
+    "button": "Logout",
+    "title": "Account info",
+    "logoutAlertTitle": "Do you really want to logout?",
+    "logoutAlertConfirm": "Continue",
+    "logoutAlertCancel": "Cancel"
   }
 }
