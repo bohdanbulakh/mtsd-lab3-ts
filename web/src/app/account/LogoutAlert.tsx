@@ -28,13 +28,13 @@ export default function LogoutAlert ({
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
-      <AlertDialogContent className="w-1/5">
+      <AlertDialogContent className="w-1/5 min-w-fit">
         <AlertDialogHeader className="m-auto">
           <AlertDialogTitle>{targetKey('logoutAlertTitle')}</AlertDialogTitle>
         </AlertDialogHeader>
-        <AlertDialogFooter>
-          <AlertDialogAction onClick={onCancel} className="w-[50%]">{targetKey('logoutAlertCancel')}</AlertDialogAction>
-          <AlertDialogCancel onClick={onConfirm} className="w-[50%]">{targetKey('logoutAlertConfirm')}</AlertDialogCancel>
+        <AlertDialogFooter className="sm:flex md:flex justify-center">
+          <AlertDialogAction onClick={onCancel} className="min-w-fit w-full sm:w-[50%] md:w-[50%] lg:w-[50%] sm:min-w-0">{targetKey('logoutAlertCancel')}</AlertDialogAction>
+          <AlertDialogCancel onClick={onConfirm} className="min-w-fit w-full sm:w-[50%] md:w-[50%] lg:w-[50%] sm:min-w-0">{targetKey('logoutAlertConfirm')}</AlertDialogCancel>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

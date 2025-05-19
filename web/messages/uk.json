@@ -37,7 +37,7 @@
   "account": {
     "logoutToastSuccess": "Ви успішно вийшли з акаунту",
     "button": "Вийти",
-    "title": "Інформація про вас",
+    "title": "Ваші дані",
     "logoutAlertTitle": "Справді хочете вийти?",
     "logoutAlertConfirm": "Так, продовжити",
     "logoutAlertCancel": "Відміна"
