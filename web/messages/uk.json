@@ -31,5 +31,8 @@
     "lastNamePlaceholder": "Нестеренко",
     "toastSuccess": "Вхід виконано успішно",
     "toastError": "Не вдалося створити обліковий запис. Спробуйте пізніше"
+  },
+  "account": {
+    "logoutToastSuccess": "Ви успішно вийшли з акаунту"
   }
 }

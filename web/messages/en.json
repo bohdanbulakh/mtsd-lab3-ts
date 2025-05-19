@@ -31,5 +31,8 @@
     "lastNamePlaceholder": "Nesterenko",
     "toastSuccess": "Logged in successfully",
     "toastError": "Registration failed. Please try again"
+  },
+  "account": {
+    "logoutToastSuccess": "Logged out successfully"
   }
 }

@@ -31,7 +31,7 @@ export default function Header () {
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuLink
-              href="/login"
+              href="/account"
               className={navigationMenuTriggerStyle()}
             >
               <Label className="font-bold text-base sm:text-xl md:text-2xl lg:text-3xl">

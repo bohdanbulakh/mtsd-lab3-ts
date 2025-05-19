@@ -12,8 +12,8 @@ class AuthAPI {
     return data;
   }
 
-  async logout (body: LoginDTO) {
-    const { data } = await client.post<void>('/auth/logout', body);
+  async logout () {
+    const { data } = await client.post<void>('/auth/logout');
     return data;
   }
 
